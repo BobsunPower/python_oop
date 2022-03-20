@@ -11,13 +11,15 @@ class Time:
         return f"{self.hours:02d}:{self.minutes:02d}:{self.seconds:02d}"
 
     def next_second(self):
-        self.seconds += 1
-        if self.seconds > Time.max_seconds:
+        if self.seconds >= Time.max_seconds:
             self.seconds = 0
             self.minutes += 1
-            if self.minutes > Time.max_minutes:
+            if self.minutes >= Time.max_minutes:
                 self.minutes = 0
                 self.hours += 1
-                if self.hours > Time.max_hours:
+                if self.hours >= Time.max_hours:
                     self.hours = 0
+                    self.seconds = 0
+        else:
+            self.seconds += 1
         return self.get_time()
