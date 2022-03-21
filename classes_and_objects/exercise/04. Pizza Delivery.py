@@ -23,4 +23,4 @@ class PizzaDelivery:
 
     def make_order(self):
         self.ordered = True
-        return f"You've ordered pizza {self.name} prepared with {', '.join([f'{k}: {v}' for k, v in self.ingredients.items()])} and the price will be {self.price}lv. "
+        return f"You've ordered pizza {self.name} prepared with {', '.join([f'{k}: {v}' for k, v in self.ingredients.items()])} and the price will be {self.price}lv."
