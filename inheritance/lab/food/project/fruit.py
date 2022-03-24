@@ -1,3 +1,4 @@
+# from inheritance.lab.food.project.food import Food
 from project.food import Food
 
 
