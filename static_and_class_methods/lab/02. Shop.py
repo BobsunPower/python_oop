@@ -1,15 +1,12 @@
 class Shop:
-    def __init__(self, name, type, capacity):
-        self.name = name
-        self.type = type
-        self.capacity = capacity
-        self.items = {}
+    def __init__(self, name: str, type: str, capacity: int):
+        self.name, self.type, self.capacity, self.items = name, type, capacity, {}
 
     @classmethod
-    def small_shop(cls, name, type):
+    def small_shop(cls, name: str, type: str):
         return cls(name, type, 10)
 
-    def add_item(self, item_name):
+    def add_item(self, item_name: str):
         taken_capacity = sum(self.items.values())
         if taken_capacity < self.capacity:
             if item_name not in self.items:
@@ -18,7 +15,7 @@ class Shop:
             return f"{item_name} added to the shop"
         return "Not enough capacity in the shop"
 
-    def remove_item(self, item_name, amount):
+    def remove_item(self, item_name: str, amount: int):
         if item_name in self.items and amount <= self.items[item_name]:
             self.items[item_name] -= amount
             if self.items[item_name] == 0:
