@@ -10,6 +10,5 @@ class reverse_iter:
         temp = self.work_value
         if self.work_value < self.end_point:
             raise StopIteration
-
         self.work_value -= 1
         return self.iterable[temp]
