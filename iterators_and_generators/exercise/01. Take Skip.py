@@ -1,9 +1,6 @@
 class take_skip:
     def __init__(self, step, count):
-        self.step = step
-        self.count = count
-        self._counter = 0
-        self.work_value = 0
+        self.step, self.count, self._counter, self.work_value = step, count, 0, 0
 
     def __iter__(self):
         return self
