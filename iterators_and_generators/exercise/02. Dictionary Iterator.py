@@ -1,9 +1,7 @@
 class dictionary_iter:
     def __init__(self, input_dict: dict):
-        self.input_dict = input_dict
+        self.input_dict, self.start_point = input_dict, 0
         self.pairs = list(self.input_dict.items())
-
-        self.start_point = 0
         self.end_point = len(self.pairs) - 1
 
     def __iter__(self):
